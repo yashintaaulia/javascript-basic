@@ -1,0 +1,7 @@
+Langkah - langkah Github:
+
+1. git clone <nama-url>
+2. git add .
+3. git commit -m "message"
+4. git push origin main
+5. Refresh repositori
