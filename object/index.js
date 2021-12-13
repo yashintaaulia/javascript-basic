@@ -233,3 +233,55 @@
  * 
  * ex: deleteTodo(3) -> 3 adalah id task
  */
+
+var todos = [
+    {
+        id: 1,
+        task: "belajar Object",
+        status: 0
+    },{
+        id: 2,
+        task: "belajar Function",
+        status: 1
+    }
+]
+// console.log(todos)
+
+function viewTodos(todos){
+    console.log("To do list: ")
+    for (var i = 0; i < todos.length; i++){
+        if(todos[i].status === 1){
+            console.log(todos[i].id + ". [X] " + todos[i].task);
+        } else {
+            console.log(todos[i].id + ". [ ] " + todos[i].task)
+        }
+    }
+}
+// viewTodos(todos)
+
+function addTodo(task, status){
+    var id = todos[todos.length -1].id +1;
+    var tempObj = {
+        id,
+        task,
+        status
+    }
+    todos.push(tempObj)
+}
+
+function deleteTodo(id){
+    var tempArray = []
+    for (var i = 0; i < todos.length; i++){
+        if(todos[i].id !== id) {
+            tempArray.push(todos[i])
+        }
+    }
+    todos = tempArray
+}
+
+addTodo("Belajar ES6", 0)
+addTodo("makan siang", 1);
+addTodo("jemput dia",0)
+deleteTodo(3)
+deleteTodo(5)
+viewTodos(todos)
