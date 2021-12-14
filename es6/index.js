@@ -70,7 +70,7 @@
 
 // destructuring array and object
 
-let items = ["Samsung A59", "laptop", 500000];
+// let items = ["Samsung A59", "laptop", 500000];
 
 // ES5
 // let name = items[0];
@@ -78,8 +78,64 @@ let items = ["Samsung A59", "laptop", 500000];
 // let price = items[2];
 
 //ES6
-let [name, type, price] = items
-console.log(name, type, price);
+// let [name, type, price] = items
+// console.log(name, type, price);
 
+//Destructuring object
+// const student = {
+//     name: "James",
+//     gpa: 3.21,
+//     status: true
+// }
+// let {name, gpa, status} = student
+// console.log(name, gpa, status)
+
+//=====================================================================
 
 // high order function
+// .forEach, .map, .filter
+
+//forEach
+// const numbers = [3,2,5,7,10];
+//ES5
+// for (let i = 0; i < numbers.length; i++){
+//     console.log(numbers[i]);
+// }
+
+//ES6
+// numbers.forEach(number => {
+//     console.log(number)
+// })
+
+//Map
+//[9,4,25,49,100]
+
+//ES5
+// let squareNumbers = [];
+// for (let i=0; i< numbers.length; i++){
+//     squareNumbers.push(numbers[i] ** 2);
+// }
+// console.log(squareNumbers)
+// ** artinya pangkat/power
+
+//ES6
+// let squareNumbers = numbers.map(number => number ** 2)
+
+// console.log(squareNumbers)
+
+// Filter
+// Filter yg lebih dari sama dengan 5
+
+//ES5
+// let filterNumbers =[];
+// for (let i = 0; i < numbers.length; i++){
+//     if(numbers[i] >= 5){
+//         filterNumbers.push(numbers[i])
+//     }
+// }
+// console.log(filterNumbers)
+
+//ES6
+// let filterNumbers = numbers.filter(number => number >= 5)
+
+// console.log(filterNumbers)
