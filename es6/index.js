@@ -139,3 +139,29 @@
 // let filterNumbers = numbers.filter(number => number >= 5)
 
 // console.log(filterNumbers)
+
+// Chaining party
+// const numbers = [100, 55, -15, 75, -10, 0, 123, -50];
+
+/**
+ * Numbers akan dikali 10
+ * Numbers akan dipilih lebih besar dari 0
+ * Numbers akan dishow
+ */
+
+// ES5
+// dikali10
+// function processNumber(numbers){
+//     for (let i = 0; i< numbers.length; i++) {
+//         if(numbers[i] > 0)
+
+// console.log(numbers[i]*10)
+//     }
+// }
+// processNumber(numbers);
+
+//ES6
+// numbers
+//   .map((number) => number * 10)
+//   .filter((number) => number > 0)
+//   .forEach((number) => console.log(number));
