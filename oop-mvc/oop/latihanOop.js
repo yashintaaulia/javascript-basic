@@ -35,33 +35,6 @@
  */
 
 // JAWABAN
-// let todos = {
-//     id: 1,
-//     task: ["Belajar OOP", "Kerjain tugas",],
-//     status: false,
-
-//     showTodos: function(){
-//         console.log("To Do List: ")
-//         this.task.forEach((task) => {
-//             console.log()
-//         });
-//     },
-//     addTodo: function(){
-//         console.log("Add To Do")
-//         this.status = true;
-//     },
-//     deleteTodo: function(){
-//         console.log("Delete To Do")
-//         this.status = true;
-//     },
-//     updateTodo: function(){
-//         console.log("Update To Do")
-//         this.status = true;
-//     },
-//     changeStatus: function(){
-//         console.log("Change")
-//     }
-// }
 
 class Todo {
     constructor(id, task, status){
@@ -100,17 +73,36 @@ class TaskBoard {
         console.log(`Task '${task}' created.`)
     }
     deleteTodo(id){
+        this.boards = this.boards.filter(board => board.id !== id)
+
+        console.log(`id ${id} has been deleted.`)
 
     }
     updateTodo(id, task){
-
+        this.boards = this.boards.map(board => {
+            if(board.id === id){
+                board.task = task
+            }
+            return board
+        })
+        console.log(`id ${id} has been updated.`)
     }
     changeStatus(id){
+        this.boards = this.boards.map(board => {
+            if(board.id === id){
+                this.status = !this.status
+            }
+            return board
+        })
 
     }
 }
 
 const taskboard = new TaskBoard()
-taskboard.addTodo("Explore OOP")
-taskboard.addTodo("Explore MVC")
+taskboard.addTodo("Explore OOP",true)
+taskboard.addTodo("Explore MVC", false)
+taskboard.addTodo("Kerjain tugas", false)
+taskboard.deleteTodo(2)
+taskboard.updateTodo(1, "Belajar JS")
+taskboard.changeStatus(3)
 taskboard.showTodos()
