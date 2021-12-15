@@ -65,14 +65,33 @@ class Showroom {
             console.log(`${i+1}. ${name}, type: ${type}, cc: ${cc}`)
         })
     }
-    addVehicle(vehicle){
-        this.rooms.push(vehicle)
+    // addVehicle(vehicle){
+    //     this.rooms.push(vehicle)
+    // }
+    addVehicle(name, type, cc){
+        switch (type){
+            case 'sedan':
+                this.rooms.push(new Sedan(name, type, cc, true))
+                break;
+            case 'pickup':
+                this.rooms.push(new Pickup(name, type, cc, 1))
+                break;
+            case 'suv':
+                this.rooms.push(new SUV(name, type, cc, "4wd"))
+                break;
+        }
+    }
+
+    deleteVehicle(vehicle){
+        this.rooms = this.rooms.filter(room => room.name !== vehicle)
     }
 }
 
 const showroom = new Showroom([]);
-// showroom.showVehicles()
-showroom.addVehicle(civic);
-showroom.addVehicle(colt);
-showroom.addVehicle(tiguan);
+showroom.addVehicle("Suzuki Karimun","sedan",1500,false)
 showroom.showVehicles()
+// showroom.addVehicle(civic);
+// showroom.addVehicle(colt);
+// showroom.addVehicle(tiguan);
+// showroom.deleteVehicle("Colt Pickup")
+// showroom.showVehicles()
